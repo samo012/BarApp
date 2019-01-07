@@ -42,9 +42,9 @@ exports.update = function(req, res) {
 
   /* Replace the article's properties with the new properties found in req.body */
   /* Save the article */
-  listing.code = req.body.code;
   listing.name = req.body.name;
-  listing.address = req.body.address;
+  listing.price = req.body.price;
+  listing.sold = req.body.sold;
 
   if (req.results){
     listing.coordinates = {
@@ -85,7 +85,7 @@ exports.delete = function(req, res) {
 exports.list = function(req, res) {
  
   /* Your code here */
-    Listing.find().sort('code').exec(function(err, listings) {
+    Listing.find().sort('sold').exec(function(err, listings) {
     if (err){
       res.status(400).send(err);
     } else {

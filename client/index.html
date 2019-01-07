@@ -27,7 +27,7 @@
                 <td>{{listing.price}}</td>
                 <td>{{listing.sold}}</td>
                 <td ng-click="deleteListing($index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
-                <td ng-click="incr($index)"><span style="color: red;" class="glyphicon glyphicon-chevron-up"></span></td>
+                <td ng-click="incr($index)"><span class="glyphicon glyphicon-plus"></span></td>
                 
 
               </tr>
@@ -35,10 +35,9 @@
           </div>
           <form novalidate class="simple-form">
             <h2>Add New Drink</h2>
-            <p>Code: <input type="text" ng-model="newListing.code" /><br /></p>
             <p>Name: <input type="text" ng-model="newListing.name" /><br /></p>
-            <p>Address: <input type="text" ng-model="newListing.address" /><br /> </p>
-            <button class="btn btn-primary" ng-click="addListing()">Add Listing</button> 
+            <p>Price: <input type="text" ng-model="newListing.price" /><br /> </p>
+            <button class="btn btn-primary" ng-click="addListing()">Add Drink</button> 
           </form>
         </div>
       </div>
