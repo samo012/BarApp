@@ -28,10 +28,16 @@ module.exports.init = function() {
   /**Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
 
+  app.get('/home', function(req, res) {
+    res.sendFile(path.resolve('client/home.html'));
+  });
+
+
   /**Go to homepage for all routes not specified */ 
   app.all('/*', function(req, res) {
     res.sendFile(path.resolve('client/index.html'));
   });
+
 
   return app;
 };  
