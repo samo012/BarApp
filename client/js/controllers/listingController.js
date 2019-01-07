@@ -12,6 +12,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.addListing = function() {
       Listings.create($scope.newListing).then(function(response) {
+        $scope.newListing.sold = 0;
         $scope.listings.push($scope.newListing);
         console.log('Listing Added');
       }, function(error) {
