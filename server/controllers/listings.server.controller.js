@@ -17,6 +17,7 @@ exports.create = function(req, res) {
 
   /* Instantiate a Listing */
   var listing = new Listing(req.body);
+  listing.sold = 0;
 
 
   /* Then save the listing */
@@ -40,18 +41,7 @@ exports.read = function(req, res) {
 exports.update = function(req, res) {
   var listing = req.listing;
 
-  /* Replace the article's properties with the new properties found in req.body */
-  /* Save the article */
-  listing.name = req.body.name;
-  listing.price = req.body.price;
-  listing.sold = req.body.sold;
-
-  if (req.results){
-    listing.coordinates = {
-      latitude: req.results.lat,
-      longitude: req.results.lng
-    };
-  }
+  listing.sold = listing.sold +1;
 
   listing.save(function(err) {
     if (err) {
