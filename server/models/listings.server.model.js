@@ -15,7 +15,8 @@ var listingSchema = new Schema({
   },
 
   sold: {
-    type: String
+    type: Number,
+    min: 0
   }, 
   
   created_at: Date,

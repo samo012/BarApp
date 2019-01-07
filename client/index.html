@@ -21,6 +21,8 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Sold</th>
+                <th></th>
+                <th></th>
               </tr>
               <tr ng-repeat="listing in listings | filter: query" ng-click="showDetails($index)">
                 <td>{{listing.name}}</td>

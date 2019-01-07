@@ -13,6 +13,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.addListing = function() {
 
           Listings.create($scope.newListing).then(function(response) {
+              $scope.newListing.sold = 0;
               $scope.listings.push($scope.newListing);
          console.log('Listing Added');
             }, function(error) {
@@ -32,6 +33,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
           });
 
     };
+    $scope.incr = function(index){
+      var num = $scope.listings[index].sold;
+      var inum = num + 1;
+      $scope.listings[index].sold = inum;
+    }
 
     $scope.showDetails = function(index) {
       $scope.detailedInfo = $scope.listings[index];
