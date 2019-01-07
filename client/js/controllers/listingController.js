@@ -18,6 +18,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       }, function(error) {
         console.log('Unable to add listing:', error);
       });
+      $window.location.reload();
     };
 
 

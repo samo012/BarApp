@@ -75,7 +75,7 @@ exports.delete = function(req, res) {
 exports.list = function(req, res) {
  
   /* Your code here */
-    Listing.find().sort('sold').exec(function(err, listings) {
+    Listing.find().sort('-sold').exec(function(err, listings) {
     if (err){
       res.status(400).send(err);
     } else {
