@@ -20,6 +20,7 @@
               <tr>
                 <th>Name</th>
                 <th>Price</th>
+                <th>+/-</th>
                 <th>Sold</th>
                 <th></th>
                 <th></th>
@@ -27,6 +28,7 @@
               <tr ng-repeat="listing in listings | filter: query" ng-click="showDetails($index)">
                 <td>{{listing.name}}</td>
                 <td>{{listing.price}}</td>
+                <td>{{listing.diff}}</td>
                 <td>{{listing.sold}}</td>
                 <td ng-click="deleteListing($index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
                 <td ng-click="incr($index)"><span class="glyphicon glyphicon-plus"></span></td>

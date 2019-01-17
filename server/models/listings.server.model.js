@@ -10,14 +10,20 @@ var listingSchema = new Schema({
     unique: true
   }, 
   price: {
-    type: String, 
+    type: Number, 
     required: true 
   },
-
+  diff: {
+    type: Number
+  }, 
   sold: {
     type: Number,
     min: 0
-  }, 
+  },
+  original: {
+    type: Number,
+    min: 0
+  },  
   
   created_at: Date,
   updated_at: Date

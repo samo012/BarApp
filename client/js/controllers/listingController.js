@@ -13,12 +13,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.addListing = function() {
       Listings.create($scope.newListing).then(function(response) {
         $scope.newListing.sold = 0;
+        $scope.newListing.diff = 0;
+        $scope.newListing.original = $scope.newListing.price;
         $scope.listings.push($scope.newListing);
         console.log('Listing Added');
       }, function(error) {
         console.log('Unable to add listing:', error);
       });
-      $window.location.reload();
     };
 
 
@@ -35,10 +36,21 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.incr = function(index){
       var id = $scope.listings[index]._id;
       Listings.update(id).then(function(response) {
-        var num = $scope.listings[index].sold;
-        var inum = num + 1;
-        $scope.listings[index].sold = inum;
-        console.log('Listing Updated');
+
+        var sold = $scope.listings[index].sold;
+        var original = $scope.listings[index].original;
+        var price = $scope.listings[index].price;
+        var num = sold + 1;
+        var diff = price - original;
+      
+        if (sold%5===0){
+          $scope.listings[index].price += 0.10;
+        }
+
+        $scope.listings[index].sold = num;
+        $scope.listings[index].diff = diff.toFixed(2);
+
+        console.log('Drink Updated');
 
       }, function(error) {
               console.log('Unable to update listing:', error);

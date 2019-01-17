@@ -18,6 +18,8 @@ exports.create = function(req, res) {
   /* Instantiate a Listing */
   var listing = new Listing(req.body);
   listing.sold = 0;
+  listing.diff = 0;
+  listing.original = listing.price;
 
 
   /* Then save the listing */
@@ -40,8 +42,15 @@ exports.read = function(req, res) {
 /* Update a listing */
 exports.update = function(req, res) {
   var listing = req.listing;
+  var diff = listing.price - listing.original;
 
   listing.sold = listing.sold +1;
+
+  listing.diff = diff.toFixed(2);
+      
+        if (listing.sold%5===0){
+          listing.price += 0.10;
+        }
 
   listing.save(function(err) {
     if (err) {
