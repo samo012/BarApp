@@ -10,7 +10,7 @@ var listingSchema = new Schema({
     unique: true
   }, 
   price: {
-    type: String, 
+    type: Number, 
     required: true 
   },
   diff: {
