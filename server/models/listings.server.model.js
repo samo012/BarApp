@@ -13,11 +13,17 @@ var listingSchema = new Schema({
     type: String, 
     required: true 
   },
-
+  diff: {
+    type: Number
+  }, 
   sold: {
     type: Number,
     min: 0
-  }, 
+  },
+  original: {
+    type: Number,
+    min: 0
+  },  
   
   created_at: Date,
   updated_at: Date

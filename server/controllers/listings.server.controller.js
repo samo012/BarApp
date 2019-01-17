@@ -18,6 +18,8 @@ exports.create = function(req, res) {
   /* Instantiate a Listing */
   var listing = new Listing(req.body);
   listing.sold = 0;
+  listing.diff = 0;
+  listing.original = listing.price;
 
 
   /* Then save the listing */

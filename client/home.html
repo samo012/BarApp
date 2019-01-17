@@ -17,6 +17,7 @@
               <tr>
                 <th>Name</th>
                 <th>Sold</th>
+                <th>+/-</th>
                 <th>Price</th>
                 <th></th>
                 <th></th>
@@ -24,6 +25,7 @@
               <tr ng-repeat="listing in listings">
                 <td>{{listing.name}}</td>
                 <td>{{listing.sold}}</td>
+                <td>{{listing.diff}}</td>
                 <td>{{listing.price}}</td>
 
               </tr>

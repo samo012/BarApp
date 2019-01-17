@@ -13,6 +13,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.addListing = function() {
       Listings.create($scope.newListing).then(function(response) {
         $scope.newListing.sold = 0;
+        $scope.newListing.diff = 0;
+        $scope.newListing.original = $scope.newListing.price;
         $scope.listings.push($scope.newListing);
         console.log('Listing Added');
       }, function(error) {
@@ -36,6 +38,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       var id = $scope.listings[index]._id;
       Listings.update(id).then(function(response) {
         var num = $scope.listings[index].sold;
+        if (num%5==0)
+          if ()
         var inum = num + 1;
         $scope.listings[index].sold = inum;
         console.log('Listing Updated');
