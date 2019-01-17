@@ -1,17 +1,21 @@
 {
-  "name": "Assignment4",
+  "name": "BarApp",
   "version": "1.0.0",
-  "description": "Routing server-side requests using ExpressJS",
+  "description": "Making drinking more economical like",
   "main": "server.js",
-  "author": "Medhir Bhargava",
+  "author": "Andrew Samole",
   "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "describe": "^1.2.0",
     "express": "^4.16.3",
     "mongoose": "^4.13.17",
     "morgan": "^1.9.1",
-    "request": "^2.67.0"
+    "request": "^2.67.0",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "should": "^7.1.1",

@@ -7,11 +7,19 @@ var path = require('path'),
     listingsRouter = require('../routes/listings.server.routes');
 
 module.exports.init = function() {
+
+
   //connect to database
   mongoose.connect(config.db.uri);
 
   //initialize app
   var app = express();
+  var http = require('http').Server(app);
+  var io = require('socket.io')(http);
+
+  io.on('connection', function(socket){
+    console.log('a user connected');
+  });
 
   //enable request logging for development debugging
   app.use(morgan('dev'));
@@ -37,7 +45,6 @@ module.exports.init = function() {
   app.all('/*', function(req, res) {
     res.sendFile(path.resolve('client/index.html'));
   });
-
 
   return app;
 };  
