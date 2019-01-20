@@ -48,7 +48,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         }
 
         $scope.listings[index].sold = num;
-        $scope.listings[index].diff = diff.toFixed(2);
+        $scope.listings[index].diff = parseFloat(diff.toFixed(2));
 
         console.log('Drink Updated');
 
