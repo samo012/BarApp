@@ -32,6 +32,7 @@ module.exports.init = function() {
 
   app.use('/', express.static(__dirname + '/../../client'));
   app.use('/public', express.static(__dirname + '/../../public'));
+  app.use('/scripts', express.static(__dirname + '/../../node_modules'));
 
   /**Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
@@ -39,12 +40,14 @@ module.exports.init = function() {
   app.get('/home', function(req, res) {
     res.sendFile(path.resolve('client/home.html'));
   });
-
+    app.get('/test', function(req, res) {
+        res.sendFile(path.resolve('client/test.html'));
+    });
 
   /**Go to homepage for all routes not specified */ 
   app.all('/*', function(req, res) {
     res.sendFile(path.resolve('client/index.html'));
   });
 
-  return app;
+  return http;
 };  
