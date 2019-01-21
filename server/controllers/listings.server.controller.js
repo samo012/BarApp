@@ -61,7 +61,6 @@ exports.update = function(req, res) {
       res.status(400).send(err);
     } else {
       res.json(listing);
-      console.log("\n~Listing saved~");
     }
   });
 };
@@ -78,12 +77,11 @@ exports.delete = function(req, res) {
       res.status(400).send(err);
     } else{
       res.end();
-      console.log("\n~Listing deleted~");
     }
   })
 };
 
-/* Retreive all the directory listings, sorted alphabetically by listing code */
+/* Retrieve all the directory listings, sorted alphabetically by listing code */
 exports.list = function(req, res) {
  
   /* Your code here */

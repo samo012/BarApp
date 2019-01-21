@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="/scripts/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/home.css">
   </head>
-  <body ng-app="directoryApp">
+  <body ng-app="barApp">
   <center>
     <div class="container">
       <div class="row">
         <h1>UF Bar App</h1>
       </div>
       <div class="row" ng-controller="ListingsController">
-      
+
           <div class="tableWrapper">
             <table class="table table-sm table-dark">
               <tr>
@@ -34,20 +31,18 @@
 
               </tr>
             </table>
-          
+
         </div>
       </div>
     </div>
     </center>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script>
-      const socket = io();
-    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/jquery/dist/jquery.min.js"></script>
+    <script src="/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/scripts/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/factories/listingFactory.js"></script>
+    <script src="js/factories/socketFactory.js"></script>
     <script src="js/controllers/listingController.js"></script>
   </body>
 </html>

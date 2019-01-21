@@ -19,6 +19,25 @@ module.exports.init = function() {
 
   io.on('connection', function(socket){
     console.log('a user connected');
+    socket.on('disconnect', function(){
+      console.log('user disconnected');
+    });
+    socket.on('priceUpdate', function(data){
+      console.log(data);
+    });
+    socket.on('listingAdded', function(data){
+      console.log(data);
+      socket.broadcast.emit('listingAdded', data);
+    });
+    socket.on('listingDeleted', function(data){
+      console.log(data);
+      socket.broadcast.emit('listingDeleted', data);
+    });
+    socket.on('listingUpdated', function(data){
+      console.log(data);
+      socket.broadcast.emit('listingUpdated', data);
+    });
+
   });
 
   //enable request logging for development debugging
