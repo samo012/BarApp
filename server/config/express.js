@@ -29,6 +29,15 @@ module.exports.init = function() {
       console.log(data);
       socket.broadcast.emit('listingAdded', data);
     });
+    socket.on('listingDeleted', function(data){
+      console.log(data);
+      socket.broadcast.emit('listingDeleted', data);
+    });
+    socket.on('listingUpdated', function(data){
+      console.log(data);
+      socket.broadcast.emit('listingUpdated', data);
+    });
+
   });
 
   //enable request logging for development debugging
