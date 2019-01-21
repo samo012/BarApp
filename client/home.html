@@ -21,11 +21,11 @@
                 <th></th>
                 <th></th>
               </tr>
-              <tr ng-repeat="listing in listings">
+              <tr ng-repeat="listing in listings | orderBy : '-diff'">
                 
                 <td >{{listing.name}}</td>
-                <td ng-class="{'positive':listing.diff>0,'negative':listing.diff==0}">{{listing.diff}}</td>
-                <td>{{listing.price}}</td>
+                <td ng-class="{'red':listing.diff>0,'green':listing.diff==0}">{{listing.diff}}</td>
+                <td>{{listing.price | currency}}</td>
             
 
 

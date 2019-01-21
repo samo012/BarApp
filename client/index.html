@@ -8,6 +8,7 @@
     <div class="container">
       <div class="row">
         <h1>UF Bar App</h1>
+        <a href="/home">Stock Page</a>
       </div>
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
@@ -27,7 +28,7 @@
               </tr>
               <tr ng-repeat="listing in listings | filter: query" ng-click="showDetails($index)">
                 <td>{{listing.name}}</td>
-                <td>{{listing.price}}</td>
+                <td>{{listing.price | currency}}</td>
                 <td>{{listing.diff}}</td>
                 <td>{{listing.sold}}</td>
                 <td ng-click="deleteListing($index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>

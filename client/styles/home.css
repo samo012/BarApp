@@ -10,10 +10,10 @@ body{
 	text-align: center;
 }
 
-.negative {
+.red {
     background-color : red; 
 }
 
-.positive {
+.green {
     background-color: green;
 }
