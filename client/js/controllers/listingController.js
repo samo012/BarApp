@@ -57,12 +57,13 @@ angular.module('admin').controller('ListingsController', ['$scope', 'Listings', 
 				if (sold%5===0){
 					$scope.listings[index].price += 0.10;
 				}
-
-				$scope.listings[index].sold = num;
-				$scope.listings[index].diff = diff.toFixed(2);*/
+        */
+        //CHECK THIS
                 $scope.listings.splice($scope.listings.findIndex(listing => listing._id === response.data._id), 1, response.data);
                 socket.emit('listingUpdated', response.data);
 				console.log('Drink Updated');
+        $scope.listings[index].sold = num;
+        $scope.listings[index].diff = parseFloat(diff.toFixed(2));
 
 			}, function(error) {
 				console.log('Unable to update listing:', error);
@@ -74,6 +75,10 @@ angular.module('admin').controller('ListingsController', ['$scope', 'Listings', 
 		$scope.showDetails = function(index) {
 			$scope.detailedInfo = $scope.listings[index];
 		};
-
-	}
-]);
+      }, function(error) {
+              console.log('Unable to update listing:', error);
+          });
+    };
+  }
+  
+  ]);

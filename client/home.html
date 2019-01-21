@@ -2,7 +2,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="/scripts/dist/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="styles/home.css">
   </head>
   <body ng-app="barApp">
@@ -14,20 +13,21 @@
       <div class="row" ng-controller="ListingsController">
 
           <div class="tableWrapper">
-            <table class="table table-dark">
+            <table class="table table-sm table-dark">
               <tr>
                 <th>Name</th>
-                <th>Sold</th>
                 <th>+/-</th>
                 <th>Price</th>
                 <th></th>
                 <th></th>
               </tr>
               <tr ng-repeat="listing in listings">
-                <td>{{listing.name}}</td>
-                <td>{{listing.sold}}</td>
-                <td>{{listing.diff}}</td>
+                
+                <td >{{listing.name}}</td>
+                <td ng-class="{'positive':listing.diff>0,'negative':listing.diff==0}">{{listing.diff}}</td>
                 <td>{{listing.price}}</td>
+            
+
 
               </tr>
             </table>

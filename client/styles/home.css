@@ -1,4 +1,19 @@
-body {
-	background: black;
-	color: white;
+body{
+	background: #212529 !important;
+	color: white !important;
+}
+
+.table{
+	width: 50%;
+	margin-top: 3%;
+	font-size: 22px;
+	text-align: center;
+}
+
+.negative {
+    background-color : red; 
+}
+
+.positive {
+    background-color: green;
 }

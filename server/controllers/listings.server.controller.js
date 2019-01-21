@@ -46,11 +46,14 @@ exports.update = function(req, res) {
 
   listing.sold = listing.sold +1;
 
-  listing.diff = diff.toFixed(2);
+  listing.diff = parseFloat(diff.toFixed(2));
       
         if (listing.sold%5===0){
           listing.price += 0.10;
         }
+
+        /*if (time.now - time.updated at > 1 min)
+          price--*/
 
   listing.save(function(err) {
     if (err) {
