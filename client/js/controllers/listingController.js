@@ -56,10 +56,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
               console.log('Unable to update listing:', error);
           });
     };
-
-    $scope.showDetails = function(index) {
-      $scope.detailedInfo = $scope.listings[index];
-    };
-
   }
+  
   ]);

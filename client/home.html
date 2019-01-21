@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="styles/home.css">
   </head>
   <body ng-app="directoryApp">
@@ -13,7 +16,7 @@
       <div class="row" ng-controller="ListingsController">
       
           <div class="tableWrapper">
-            <table class="table table-dark">
+            <table class="table table-sm table-dark">
               <tr>
                 <th>Name</th>
                 <th>+/-</th>
@@ -22,9 +25,12 @@
                 <th></th>
               </tr>
               <tr ng-repeat="listing in listings">
-                <td>{{listing.name}}</td>
-                <td>{{listing.diff}}</td>
+                
+                <td >{{listing.name}}</td>
+                <td ng-class="{'positive':listing.diff>0,'negative':listing.diff==0}">{{listing.diff}}</td>
                 <td>{{listing.price}}</td>
+            
+
 
               </tr>
             </table>
