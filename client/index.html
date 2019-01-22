@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
@@ -11,7 +12,7 @@
         <a href="/home">Stock Page</a>
       </div>
       <div class="row" ng-controller="ListingsController">
-        <div class="col-md-6">
+        
           <div class="input-group" id="searchBar">
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="query">
@@ -31,7 +32,7 @@
                 <td>{{listing.price | currency}}</td>
                 <td>{{listing.diff}}</td>
                 <td>{{listing.sold}}</td>
-                <td ng-click="deleteListing($index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
+                <td ng-click="deleteListing($index)"><span style="color: red; padding-right: 10px; margin-left: -10px;" class="glyphicon glyphicon-remove"></span></td>
                 <td ng-click="incr($index)"><span class="glyphicon glyphicon-plus"></span></td>
 
 
@@ -45,7 +46,7 @@
             <button class="btn btn-primary" ng-click="addListing()">Add Drink</button>
           </form>
         </div>
-      </div>
+      
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/scripts/jquery/dist/jquery.min.js"></script>

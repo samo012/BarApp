@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/scripts/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
   </head>
   <body ng-app="barApp">
   <center>
@@ -13,13 +15,11 @@
       <div class="row" ng-controller="ListingsController">
 
           <div class="tableWrapper">
-            <table class="table table-sm table-dark">
+            <table class="table table-striped" cellpadding="10">
               <tr>
                 <th>Name</th>
                 <th>+/-</th>
                 <th>Price</th>
-                <th></th>
-                <th></th>
               </tr>
               <tr ng-repeat="listing in listings | orderBy : '-diff'">
                 

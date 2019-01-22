@@ -3,9 +3,10 @@
 }
 
 .tableWrapper {
-  max-height: 400px;
+  max-width: 100%;
   overflow: auto;
   border: 2px solid #285797;
+  font-size: 1.5em;
 }
 
 h1 {
