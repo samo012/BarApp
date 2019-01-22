@@ -13,10 +13,15 @@ h1{
 	font-size: 3vw;
 	text-align: center;
 }
+td{
+	background: #212529;
+		/*border: 2px solid #a9a9a9;*/
 
-th,td{
+}
+
+th{
 	background: #0c0c0c;
-	border: 2px solid #a9a9a9;
+	/*border: 2px solid #a9a9a9;*/
 	font-size: 3vw;
 }
 

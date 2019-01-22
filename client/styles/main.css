@@ -8,8 +8,12 @@
   border: 2px solid #285797;
   font-size: 1.5em;
 }
+form{
+	margin-left:5%;
+}
 
 h1 {
+	margin-left: 3%;
 	font-family: "Arial Black";
 	font-weight: bold;
 	color: #285797;
@@ -24,6 +28,10 @@ body {
 
 form {
 	margin-top: 40px;
+}
+a{
+	float:right; 
+	margin-right:3%;
 }
 
 p {
