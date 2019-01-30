@@ -1,6 +1,14 @@
 body{
 	background: #212529 !important;
 	color: white !important;
+	 
+}
+
+h1{
+	color: white;
+}
+th, td{
+	border: 2px solid grey;
 }
 
 .table{

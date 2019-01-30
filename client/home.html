@@ -8,7 +8,9 @@
   <center>
     <div class="container">
       <div class="row">
+        <a href="/">
         <h1>UF Bar App</h1>
+      </a>
       </div>
       <div class="row" ng-controller="ListingsController">
 
@@ -18,17 +20,11 @@
                 <th>Name</th>
                 <th>+/-</th>
                 <th>Price</th>
-                <th></th>
-                <th></th>
               </tr>
-              <tr ng-repeat="listing in listings | orderBy : '-diff'">
-                
+              <tr ng-repeat="listing in listings | orderBy : '-diff'">               
                 <td >{{listing.name}}</td>
                 <td ng-class="{'red':listing.diff>0,'green':listing.diff==0}">{{listing.diff}}</td>
                 <td>{{listing.price | currency}}</td>
-            
-
-
               </tr>
             </table>
 

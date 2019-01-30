@@ -110,6 +110,10 @@ setInterval(checkTimes, 300000);
   app.get('/home', function(req, res) {
     res.sendFile(path.resolve('client/home.html'));
   });
+
+  app.get('/admin', function(req, res) {
+    res.sendFile(path.resolve('client/admin.html'));
+  });
     app.get('/test', function(req, res) {
         res.sendFile(path.resolve('client/test.html'));
     });
