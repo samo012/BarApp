@@ -3,12 +3,14 @@
 }
 
 .tableWrapper {
-  max-height: 400px;
+  max-width: 100%;
   overflow: auto;
   border: 2px solid #285797;
+  font-size: 1.5em;
 }
 
 h1 {
+	margin-left: .2em;
 	font-family: "Arial Black";
 	font-weight: bold;
 	color: #285797;
@@ -17,18 +19,26 @@ h1 {
 body {
 	background: #D4D8E6;
 }
+
 .row {
 	color: #285797;
 }
 
 form {
 	margin-top: 40px;
+	margin-left: 1em;
+}
+
+a{
+	float:right; 
+	margin-right:3%;
 }
 
 p {
 	
 	padding-top: 5px;
 }
+
 .btn {
 	margin-top: 10px;
 }
