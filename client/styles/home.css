@@ -17,7 +17,7 @@ h1{
 .table{
 	max-width: 100%;
 	margin-top: 3%;
-	font-size: 3vw;
+	font-size: 2.5vw;
 	text-align: center;
 }
 td{
@@ -29,7 +29,7 @@ td{
 th{
 	background: #0c0c0c;
 	/*border: 2px solid #a9a9a9;*/
-	font-size: 3vw;
+	font-size: 2.5vw;
 }
 
 .red {
